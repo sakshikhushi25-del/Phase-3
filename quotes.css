@@ -1,0 +1,141 @@
+:root {
+    --cb: cubic-bezier(.68, -0.55, 0.26, 1.55)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #4e525b;
+}
+.container {
+    width: 700px;
+    height: auto;
+    border-radius: 30px;
+    background: linear-gradient(25deg, #525a65, #3b424c);
+    box-shadow: inset 2px -1px 1px 0 rgba(255, 255, 255, 0.2),
+                inset 2px -1px 1px 0 rgba(0, 0, 0, 0.2),
+                4px 1px 5px 0 rgba(0, 0, 0, 0.5),
+                -1px -3px 5px 0 rgba(0, 0, 0, 0.5),
+                4px -3px 10px 0 rgba(0, 0, 0, 0.5),
+                -1px -1px 10px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.header {
+    padding: 10px 25px;
+    border-bottom: 2px solid #838a8a;
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    color: #fff200;
+}
+.content {
+    padding: 20px 25px;
+    position: relative;
+    z-index: 1;
+}
+.quote {
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+    margin: 0 10px;
+    word-break: break-all;
+}
+.footer {
+    padding: 20px 25px;
+    border-top: 2px solid #838a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+.icon div {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.icon div i {
+    color: #fff; 
+    font-size: 20px;
+    transition: 0.2s;
+}
+.icon div:hover {
+    background: #fff;
+}
+.icon div i:hover {
+    color: #000;
+}
+.btn button {
+    padding: 10px 25px;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.btn .button:hover {
+    background: #fff200;
+}
+.copyBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    color: #000;
+    padding: 5px 12px;
+    background-color: #fff200;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px #00000015;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s var(--cb);
+
+}
+.tooltip::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #fff200;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+}
+.copyBtn:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.author {
+    margin-top: 10px;
+    font-style: italic;
+    text-align: right;
+    color: #befa5c;
+}
